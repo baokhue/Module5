@@ -1,4 +1,4 @@
-import {useIncrement} from "./useIncrement";
+import {useIncrement} from "./hooks/useIncrement";
 
 export function Counter2() {
     const {count, increase2} = useIncrement(0);
