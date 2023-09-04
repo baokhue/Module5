@@ -10,19 +10,28 @@ import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from "react-toastify";
 import {ContactForm} from "./component/lesson5/ContactForm";
 import {HealthDeclaration} from "./component/lesson5/HealthDeclaration";
+import {Library} from "./component/lesson5/Library";
+import {TodoList} from "./component/lesson6/TodoList";
+import {LibraryApp} from "./component/lesson6/LibraryApp";
+
+import {Facilities} from "./component/case_study/facilities/Facilities";
+import {Employees} from "./component/case_study/employees/Employees";
+import {Customers} from "./component/case_study/customer/Customers";
+import {NotFound} from "./component/case_study/NotFound";
+import {useState} from "react";
+import {FacilitiesCreate} from "./component/case_study/facilities/FacilitiesCreate";
+import {Header} from "./component/case_study/Header";
+import {Footer} from "./component/case_study/Footer";
 
 
 function App() {
+
+
   return (
     <>
-        {/*<Student />*/}
-        {/*<TodoApp />*/}
-        {/*<Counter1 />*/}
-        {/*<Counter2 />*/}
-        {/*<Alert text="Warning! This resource is not exist."/>*/}
-      {/*<Calculator />*/}
-      {/*  <ContactForm />*/}
-        <HealthDeclaration />
+        <Header />
+
+        <Footer />
         <ToastContainer />
     </>
   );

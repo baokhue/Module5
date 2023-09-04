@@ -6,7 +6,7 @@ export function HealthDeclaration() {
     return (
         <>
             <div className="container">
-                <h1>Library</h1>
+                <h1>Health Declaration</h1>
                 <Formik
                     initialValues={
                         {
@@ -39,7 +39,7 @@ export function HealthDeclaration() {
                             ward: Yup.string().required("Required!"),
                             street: Yup.string().required("Required!"),
                             phone: Yup.string().required("Required!"),
-                            email: Yup.string().required("Required!").matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$/, "Invalid email address!")
+                            email: Yup.string().required("Required!").matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, "Invalid email address!")
                         })
                     }
                     onSubmit={(values, {setSubmitting}) =>
@@ -51,17 +51,17 @@ export function HealthDeclaration() {
                     }>
                 <Form>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">Full name</label>
+                        <label className="form-label">Full name</label>
                         <Field name="fullName" type="text" className="form-control" />
                         <ErrorMessage name="fullName" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">ID Card</label>
+                        <label className="form-label">ID Card</label>
                         <Field name="idCard" type="text" className="form-control"/>
                         <ErrorMessage name="idCard" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Year of birth</label>
+                        <label className="form-label">Year of birth</label>
                         <Field name="birthday" type="number" className="form-control"/>
                         <ErrorMessage name="birthday" className="form-err" component='span'></ErrorMessage>
                     </div>
@@ -80,17 +80,17 @@ export function HealthDeclaration() {
                         </div>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Nationality</label>
+                        <label className="form-label">Nationality</label>
                         <Field name="nationality" type="text" className="form-control"/>
                         <ErrorMessage name="nationality" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Company</label>
+                        <label className="form-label">Company</label>
                         <Field name="company" type="text" className="form-control"/>
                         <ErrorMessage name="company" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Department</label>
+                        <label className="form-label">Department</label>
                         <Field name="department" type="text" className="form-control"/>
                         <ErrorMessage name="department" className="form-err" component='span'></ErrorMessage>
                     </div>
@@ -102,32 +102,32 @@ export function HealthDeclaration() {
                     <h2>Vietnamese Address</h2>
                     <br/>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">City</label>
+                        <label className="form-label">City</label>
                         <Field name="city" type="text" className="form-control"/>
                         <ErrorMessage name="city" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">District</label>
+                        <label className="form-label">District</label>
                         <Field name="district" type="text" className="form-control"/>
                         <ErrorMessage name="district" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Ward</label>
+                        <label className="form-label">Ward</label>
                         <Field name="ward" type="text" className="form-control"/>
                         <ErrorMessage name="ward" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Street</label>
+                        <label className="form-label">Street</label>
                         <Field name="street" type="text" className="form-control"/>
                         <ErrorMessage name="street" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Phone</label>
+                        <label className="form-label">Phone</label>
                         <Field name="phone" type="text" className="form-control"/>
                         <ErrorMessage name="phone" className="form-err" component='span'></ErrorMessage>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Email</label>
+                        <label className="form-label">Email</label>
                         <Field name="email" type="text" className="form-control"/>
                         <ErrorMessage name="email" className="form-err" component='span'></ErrorMessage>
                     </div>

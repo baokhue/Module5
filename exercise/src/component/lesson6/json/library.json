@@ -1,0 +1,13 @@
+{
+  "books": [
+    {
+      "title": "Book 1",
+      "quantity": 10
+    },
+    {
+      "title": "Book 2",
+      "quantity": 12
+    }
+  ],
+  "bookList": []
+}
