@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import * as customerServices from "../services/customer/CustomerServices";
+import * as customerServices from "../services/CustomerServices";
 import {toast} from "react-toastify";
 import {Field, Form, Formik} from "formik";
 

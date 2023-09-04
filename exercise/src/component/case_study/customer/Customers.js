@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import * as customerServices from "../services/customer/CustomerServices";
+import * as customerServices from "../services/CustomerServices";
 
 export function Customers(){
     const [customers, setCustomers] = useState([]);

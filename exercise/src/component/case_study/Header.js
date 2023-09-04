@@ -7,11 +7,14 @@ import {NotFound} from "./NotFound";
 import {useState} from "react";
 import {EmployeeCreate} from "./employees/EmployeeCreate";
 import {CustomerCreate} from "./customer/CustomerCreate";
+import {Contracts} from "./contract/Contracts";
+import {ContractCreate} from "./contract/ContractCreate";
 
 export function Header(){
     const [isOpenFacilities, setIsOpenFacilities] = useState(false);
     const [isOpenEmployees, setIsOpenEmployees] = useState(false);
     const [isOpenCustomers, setIsOpenCustomers] = useState(false);
+    const [isOpenContracts, setIsOpenContracts] = useState(false);
 
     return (
         <>
@@ -20,7 +23,7 @@ export function Header(){
                     <table>
                         <tr>
                             <td>
-                                <div style={{display: "inline-block"}}>
+                                <div>
                                     <button onClick={() => setIsOpenFacilities(!isOpenFacilities)}>Facilities</button>
                                     {isOpenFacilities && (
                                         <div>
@@ -52,6 +55,17 @@ export function Header(){
                                     )}
                                 </div>
                             </td>
+                            <td>
+                                <div>
+                                    <button onClick={() => setIsOpenContracts(!isOpenContracts)}>Contracts</button>
+                                    {isOpenContracts && (
+                                        <div>
+                                            <p><NavLink to='/contracts' >List</NavLink></p>
+                                            <p><NavLink to='/contracts/create'>Create</NavLink></p>
+                                        </div>
+                                    )}
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -63,6 +77,8 @@ export function Header(){
                     <Route path="/employees/create" element={<EmployeeCreate />}></Route>
                     <Route path="/customers/" element={<Customers />}></Route>
                     <Route path="/customers/create" element={<CustomerCreate />}></Route>
+                    <Route path="/contracts/" element={<Contracts />}></Route>
+                    <Route path="/contracts/create" element={<ContractCreate />}></Route>
 
                     <Route path="*" element={<NotFound />}></Route>
                 </Routes>

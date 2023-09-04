@@ -1,5 +1,5 @@
 import {Field, Form, Formik} from "formik";
-import * as facilityServices from "../services/facility/FacilityService";
+import * as facilityServices from "../services/FacilityService";
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
 

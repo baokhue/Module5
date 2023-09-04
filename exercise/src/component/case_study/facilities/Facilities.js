@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import * as facilityService from "../services/facility/FacilityService";
+import * as facilityService from "../services/FacilityService";
 
 export function Facilities() {
     const [facilities, setFacilities] = useState([]);

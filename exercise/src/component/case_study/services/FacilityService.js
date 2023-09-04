@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getFacilities = async () => {
     try {
-        const result = await axios.get("http://localhost:8080/facilities");
+        const result = await axios.get("http://localhost:8081/facilities");
         return result.data;
     } catch (e) {
         console.log(e);
@@ -11,7 +11,7 @@ export const getFacilities = async () => {
 
 export const addFacility = async (value) => {
     try {
-        const result = await axios.post("http://localhost:8080/facilities", value);
+        const result = await axios.post("http://localhost:8081/facilities", value);
         return result.data;
     } catch (e) {
         console.log(e);
