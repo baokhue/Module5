@@ -14,28 +14,32 @@ export function Facilities() {
     };
     return (
         <>
-            {
-                facilities.map((facility) => {
-                    return (
-                        <>
-                            <div className="row row-cols-1 row-cols-md-3 g-4">
-                                <div className="col">
-                                    <div className="card">
-                                        <img src="..." className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">{facility.facilityName}</h5>
-                                            <p className="card-text">{facility.square}</p>
-                                            <p className="card-text">{facility.facilityCost}</p>
-                                            <p className="card-text">{facility.people}</p>
-                                            <p className="card-text">{facility.typeOfRent}</p>
+            <div className="container">
+                <div className="facilities">
+                    <div className="card-group">
+                        {
+                            facilities.map((facility) => {
+                                return (
+                                    <>
+
+                                        <div className="card" key={facility.id}>
+                                            <div className="card-body">
+                                                <h5 className="card-title">{facility.name}</h5>
+                                                <p className="card-text">{facility.square} m2</p>
+                                                <p className="card-text">{facility.cost} VND</p>
+                                                <p className="card-text">{facility.people}</p>
+                                                <p className="card-text">{facility.type}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </>
-                    )
-                })
-            }
+
+                                    </>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            </div>
+
         </>
     )
 }

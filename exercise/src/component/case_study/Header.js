@@ -16,40 +16,52 @@ export function Header(){
     return (
         <>
             <BrowserRouter>
-                <div style={{display: "inline-block"}}>
-                    <button onClick={() => setIsOpenFacilities(!isOpenFacilities)}>Facilities</button>
-                    {isOpenFacilities && (
-                        <div>
-                            <p><NavLink to='/facilities/list' >List</NavLink></p>
-                            <p><NavLink to='/facilities/create'>Create</NavLink></p>
-                        </div>
-                    )}
+                <div className="container">
+                    <table>
+                        <tr>
+                            <td>
+                                <div style={{display: "inline-block"}}>
+                                    <button onClick={() => setIsOpenFacilities(!isOpenFacilities)}>Facilities</button>
+                                    {isOpenFacilities && (
+                                        <div>
+                                            <p><NavLink to='/facilities' >List</NavLink></p>
+                                            <p><NavLink to='/facilities/create'>Create</NavLink></p>
+                                        </div>
+                                    )}
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button onClick={() => setIsOpenEmployees(!isOpenEmployees)}>Employees</button>
+                                    {isOpenEmployees && (
+                                        <div>
+                                            <p><NavLink to='/employees' >List</NavLink></p>
+                                            <p><NavLink to='/employees/create'>Create</NavLink></p>
+                                        </div>
+                                    )}
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button onClick={() => setIsOpenCustomers(!isOpenCustomers)}>Customers</button>
+                                    {isOpenCustomers && (
+                                        <div>
+                                            <p><NavLink to='/customers' >List</NavLink></p>
+                                            <p><NavLink to='/customers/create'>Create</NavLink></p>
+                                        </div>
+                                    )}
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div style={{display: "inline-block"}}>
-                    <button onClick={() => setIsOpenEmployees(!isOpenEmployees)}>Employees</button>
-                    {isOpenEmployees && (
-                        <div>
-                            <p><NavLink to='/employees/list' >List</NavLink></p>
-                            <p><NavLink to='/employees/create'>Create</NavLink></p>
-                        </div>
-                    )}
-                </div>
-                <div style={{display: "inline-block"}}>
-                    <button onClick={() => setIsOpenCustomers(!isOpenCustomers)}>Customers</button>
-                    {isOpenCustomers && (
-                        <div>
-                            <p><NavLink to='/customers/list' >List</NavLink></p>
-                            <p><NavLink to='/customers/create'>Create</NavLink></p>
-                        </div>
-                    )}
-                </div>
-
+                
                 <Routes>
-                    <Route path="/facilities/list" element={<Facilities />}></Route>
+                    <Route path="/facilities" element={<Facilities />}></Route>
                     <Route path="/facilities/create" element={<FacilitiesCreate />}></Route>
-                    <Route path="/employees/list" element={<Employees />}></Route>
+                    <Route path="/employees" element={<Employees />}></Route>
                     <Route path="/employees/create" element={<EmployeeCreate />}></Route>
-                    <Route path="/customers/list" element={<Customers />}></Route>
+                    <Route path="/customers/" element={<Customers />}></Route>
                     <Route path="/customers/create" element={<CustomerCreate />}></Route>
 
                     <Route path="*" element={<NotFound />}></Route>

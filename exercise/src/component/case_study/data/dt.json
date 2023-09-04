@@ -1,0 +1,63 @@
+{
+  "facilities": [
+    {
+      "id": 1,
+      "name": "Ocean Suite",
+      "square": 85.8,
+      "cost": 750000,
+      "people": 4,
+      "type": "Daily, Monthly"
+    },
+    {
+      "id": 2,
+      "name": "Ocean Studio Suite",
+      "square": 40.1,
+      "cost": 950000,
+      "people": 2,
+      "type": "Monthly, Yearly"
+    },
+    {
+      "id": 3,
+      "name": "Ocean Deluxe",
+      "square": 85.8,
+      "cost": 750000,
+      "people": 4,
+      "type": "Daily"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Chewy",
+      "birthday": "17/12/2000",
+      "gender": "0",
+      "idCard": "1254513",
+      "phone": "2436403",
+      "email": "chewy@gmail.com",
+      "level": "4",
+      "address": "BR-VT"
+    },
+    {
+      "id": 2,
+      "name": "Boke",
+      "birthday": "17/01/2001",
+      "gender": "1",
+      "idCard": "241122121",
+      "phone": "45211",
+      "email": "boke@gmail.com",
+      "level": "2",
+      "address": "DN"
+    },
+    {
+      "id": 3,
+      "name": "Meow",
+      "birthday": "17/11/2002",
+      "gender": "0",
+      "idCard": "515442112",
+      "phone": "026312",
+      "email": "meow@gmail.com",
+      "level": "3",
+      "address": "Hue"
+    }
+  ]
+}
