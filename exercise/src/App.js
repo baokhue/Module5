@@ -31,16 +31,16 @@ function App() {
 
   return (
     <>
-    {/*<BrowserRouter>*/}
-    {/*<Routes>*/}
-    {/*    <Route path="/update/:id" element={<BookUpdate />}></Route>*/}
-    {/*    <Route path="" element={<LibraryApp />}></Route>*/}
-    {/*</Routes>*/}
-    {/*</BrowserRouter>*/}
+    <BrowserRouter>
+    <Routes>
+        <Route path="/update/:id" element={<BookUpdate />}></Route>
+        <Route path="" element={<LibraryApp />}></Route>
+    </Routes>
+    </BrowserRouter>
 
-        <Header />
-        <Footer />
-        <ToastContainer />
+        {/*<Header />*/}
+        {/*<Footer />*/}
+        {/*<ToastContainer />*/}
     </>
   );
 }

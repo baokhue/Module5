@@ -1,12 +1,12 @@
 import {Field, Form, Formik} from "formik";
 import {toast} from "react-toastify";
 import {useEffect, useState} from "react";
-import {BrowserRouter, NavLink, Route, Routes} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import * as bookService from "../lesson6/services/bookService";
-import {BookUpdate} from "./BookUpdate";
 
 export function LibraryApp() {
     const [bookList, setBookList] = useState([]);
+    const navigate = useNavigate();
 
     useEffect( () => {
         getBooks();
@@ -19,7 +19,16 @@ export function LibraryApp() {
 
     const addBook = async (value) => {
         await bookService.addBook(value);
+        navigate("/");
         toast.success("Add new book successfully!");
+        getBooks();
+
+    }
+
+    const deleteBook =  async (id) => {
+        await bookService.deleteBook(id);
+        toast.success("Delete book successfully!");
+        getBooks();
     }
     return (
         <>
@@ -72,7 +81,7 @@ export function LibraryApp() {
                                             </button>
                                         </td>
                                         <td>
-                                            <button name="delete">Delete</button>
+                                            <button name="delete" onClick={() => {deleteBook(book.id)}}>Delete</button>
                                         </td>
                                     </tr>
                                 </>
