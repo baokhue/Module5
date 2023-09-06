@@ -17,3 +17,21 @@ export const addCustomer = async (value) => {
         console.log(e);
     }
 };
+
+export const getCustomer = async (id) => {
+    try {
+        const result = await axios.get(`http://localhost:8081/customers/${id}`);
+        return result.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+export const editCustomer = async (id, value) => {
+    try {
+        const result = await axios.patch(`http://localhost:8081/customers/${id}`, value);
+        return result.data;
+    } catch (e) {
+        console.log(e);
+    }
+}

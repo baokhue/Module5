@@ -22,6 +22,8 @@ import {useState} from "react";
 import {FacilitiesCreate} from "./component/case_study/facilities/FacilitiesCreate";
 import {Header} from "./component/case_study/Header";
 import {Footer} from "./component/case_study/Footer";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BookUpdate} from "./component/lesson6/BookUpdate";
 
 
 function App() {
@@ -29,8 +31,14 @@ function App() {
 
   return (
     <>
-        <Header />
+    {/*<BrowserRouter>*/}
+    {/*<Routes>*/}
+    {/*    <Route path="/update/:id" element={<BookUpdate />}></Route>*/}
+    {/*    <Route path="" element={<LibraryApp />}></Route>*/}
+    {/*</Routes>*/}
+    {/*</BrowserRouter>*/}
 
+        <Header />
         <Footer />
         <ToastContainer />
     </>

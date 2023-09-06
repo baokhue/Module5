@@ -1,8 +1,9 @@
 import {Field, Form, Formik} from "formik";
 import {toast} from "react-toastify";
 import {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {BrowserRouter, NavLink, Route, Routes} from "react-router-dom";
 import * as bookService from "../lesson6/services/bookService";
+import {BookUpdate} from "./BookUpdate";
 
 export function LibraryApp() {
     const [bookList, setBookList] = useState([]);
@@ -51,21 +52,24 @@ export function LibraryApp() {
                     </Form>
                 </Formik>
                 <br/>
-                <table>
-                    <tbody>
+
+                    <table>
+                        <tbody>
                         <tr>
                             <th>Title</th>
                             <th>Quantity</th>
                             <th colSpan={2}>Actions</th>
                         </tr>
-                        {bookList.map((book, index) => {
+                        {bookList.map((book, id) => {
                             return (
                                 <>
-                                    <tr key={index}>
+                                    <tr key={id}>
                                         <td>{book.title}</td>
                                         <td>{book.quantity}</td>
                                         <td>
-                                            <button name="edit">Edit</button>
+                                            <button name="edit">
+                                                <NavLink to={`/update/${book.id}`}>Edit </NavLink>
+                                            </button>
                                         </td>
                                         <td>
                                             <button name="delete">Delete</button>
@@ -74,8 +78,9 @@ export function LibraryApp() {
                                 </>
                             )
                         })}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+
             </div>
         </>
     )

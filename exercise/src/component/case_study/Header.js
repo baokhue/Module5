@@ -9,6 +9,8 @@ import {EmployeeCreate} from "./employees/EmployeeCreate";
 import {CustomerCreate} from "./customer/CustomerCreate";
 import {Contracts} from "./contract/Contracts";
 import {ContractCreate} from "./contract/ContractCreate";
+import {FacilityUpdate} from "./facilities/FacilityUpdate";
+import {CustomerUpdate} from "./customer/CustomerUpdate";
 
 export function Header(){
     const [isOpenFacilities, setIsOpenFacilities] = useState(false);
@@ -73,10 +75,12 @@ export function Header(){
                 <Routes>
                     <Route path="/facilities" element={<Facilities />}></Route>
                     <Route path="/facilities/create" element={<FacilitiesCreate />}></Route>
+                    <Route path="/facilities/update/:id" element={<FacilityUpdate />}></Route>
                     <Route path="/employees" element={<Employees />}></Route>
                     <Route path="/employees/create" element={<EmployeeCreate />}></Route>
                     <Route path="/customers/" element={<Customers />}></Route>
                     <Route path="/customers/create" element={<CustomerCreate />}></Route>
+                    <Route path="/customers/update/:id" element={<CustomerUpdate />}></Route>
                     <Route path="/contracts/" element={<Contracts />}></Route>
                     <Route path="/contracts/create" element={<ContractCreate />}></Route>
 

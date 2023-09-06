@@ -17,3 +17,21 @@ export const addFacility = async (value) => {
         console.log(e);
     }
 }
+
+export const getFacility = async (id) => {
+    try {
+        const result = await axios.get(`http://localhost:8081/facilities/${id}`);
+        return result.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+export const editFacility = async (id, value) => {
+    try {
+        const result = await axios.patch(`http://localhost:8081/facilities/${id}`, value);
+        return result.data;
+    } catch (e) {
+        console.log(e);
+    }
+}

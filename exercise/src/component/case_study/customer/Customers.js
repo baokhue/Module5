@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import * as customerServices from "../services/CustomerServices";
+import {NavLink} from "react-router-dom";
 
 export function Customers(){
     const [customers, setCustomers] = useState([]);
@@ -44,7 +45,9 @@ export function Customers(){
                                         <td>{customer.address}</td>
                                         <td>
                                             <button>Delete</button>
-                                            <button>Update</button>
+                                            <button>
+                                                <NavLink to={`/customers/update/${customer.id}`}>Edit</NavLink>
+                                            </button>
                                         </td>
                                     </tr>
                                 </>

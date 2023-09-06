@@ -20,6 +20,7 @@ export function FacilitiesCreate() {
                             name: "",
                             square: 0,
                             cost: 0,
+                            people: 0,
                             type: "",
                         }
                     }
@@ -40,6 +41,10 @@ export function FacilitiesCreate() {
                         <div className="mb-3">
                             <label className="form-label">Cost: </label>
                             <Field name="cost" type="number" className="form-control" />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Number of people: </label>
+                            <Field name="people" type="number" className="form-control" />
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Type of Rent: </label>

@@ -1,10 +1,12 @@
 {
   "books": [
     {
-      "title": "Book 1",
+      "id": 1,
+      "title": "Book 100",
       "quantity": 10
     },
     {
+      "id": 2,
       "title": "Book 2",
       "quantity": 12
     }
