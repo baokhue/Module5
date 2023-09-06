@@ -45,8 +45,8 @@ export function Customers(){
                                         <td>{customer.address}</td>
                                         <td>
                                             <button>Delete</button>
-                                            <button>
-                                                <NavLink to={`/customers/update/${customer.id}`}>Edit</NavLink>
+                                            <button type="button" class="btn btn-success">
+                                                <NavLink to={`/customers/update/${customer.id}`} style={{textDecoration: "none", color: "black"}}>Edit</NavLink>
                                             </button>
                                         </td>
                                     </tr>

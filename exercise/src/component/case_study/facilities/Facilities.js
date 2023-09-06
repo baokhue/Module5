@@ -34,8 +34,8 @@ export function Facilities() {
                                                     <button>Delete</button>
                                                 </span>
                                                 <span>
-                                                    <button>
-                                                        <NavLink to={`/facilities/update/${facility.id}`}>Edit</NavLink>
+                                                    <button type="button" class="btn btn-success" >
+                                                        <NavLink to={`/facilities/update/${facility.id}`} style={{textDecoration: "none", color: "black"}}>Edit</NavLink>
                                                     </button>
                                                 </span>
                                             </div>

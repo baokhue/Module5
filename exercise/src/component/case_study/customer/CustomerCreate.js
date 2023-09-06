@@ -2,6 +2,7 @@ import {useNavigate} from "react-router-dom";
 import * as customerServices from "../services/CustomerServices";
 import {toast} from "react-toastify";
 import {Field, Form, Formik} from "formik";
+import * as Yup from "yup";
 
 export function CustomerCreate() {
     const navigate = useNavigate();
@@ -28,6 +29,13 @@ export function CustomerCreate() {
                             address: "",
                         }
                     }
+
+                    validationSchema={
+                        Yup.object({
+                            name: Yup.string().matches(/^D[A-Za-z]+$/, "This field is invalid!"),
+                        })
+                    }
+
                     onSubmit={(values, {setSubmitting}) => {
                         addCustomer(values);
                         setSubmitting(false);
@@ -106,7 +114,7 @@ export function CustomerCreate() {
                             <Field name="address" type="text" className="form-control" />
                         </div>
 
-                        <button type="submit">Add new</button>
+                        <button type="submit" class="btn btn-info">Add new</button>
                     </Form>
                 </Formik>
 

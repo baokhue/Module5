@@ -13,63 +13,63 @@ import {FacilityUpdate} from "./facilities/FacilityUpdate";
 import {CustomerUpdate} from "./customer/CustomerUpdate";
 
 export function Header(){
-    const [isOpenFacilities, setIsOpenFacilities] = useState(false);
-    const [isOpenEmployees, setIsOpenEmployees] = useState(false);
-    const [isOpenCustomers, setIsOpenCustomers] = useState(false);
-    const [isOpenContracts, setIsOpenContracts] = useState(false);
+    // const [isOpenFacilities, setIsOpenFacilities] = useState(false);
+    // const [isOpenEmployees, setIsOpenEmployees] = useState(false);
+    // const [isOpenCustomers, setIsOpenCustomers] = useState(false);
+    // const [isOpenContracts, setIsOpenContracts] = useState(false);
 
     return (
         <>
             <BrowserRouter>
-                <div className="container">
-                    <table>
-                        <tr>
-                            <td>
-                                <div>
-                                    <button onClick={() => setIsOpenFacilities(!isOpenFacilities)}>Facilities</button>
-                                    {isOpenFacilities && (
-                                        <div>
-                                            <p><NavLink to='/facilities' >List</NavLink></p>
-                                            <p><NavLink to='/facilities/create'>Create</NavLink></p>
-                                        </div>
-                                    )}
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <button onClick={() => setIsOpenEmployees(!isOpenEmployees)}>Employees</button>
-                                    {isOpenEmployees && (
-                                        <div>
-                                            <p><NavLink to='/employees' >List</NavLink></p>
-                                            <p><NavLink to='/employees/create'>Create</NavLink></p>
-                                        </div>
-                                    )}
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <button onClick={() => setIsOpenCustomers(!isOpenCustomers)}>Customers</button>
-                                    {isOpenCustomers && (
-                                        <div>
-                                            <p><NavLink to='/customers' >List</NavLink></p>
-                                            <p><NavLink to='/customers/create'>Create</NavLink></p>
-                                        </div>
-                                    )}
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <button onClick={() => setIsOpenContracts(!isOpenContracts)}>Contracts</button>
-                                    {isOpenContracts && (
-                                        <div>
-                                            <p><NavLink to='/contracts' >List</NavLink></p>
-                                            <p><NavLink to='/contracts/create'>Create</NavLink></p>
-                                        </div>
-                                    )}
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                <div className="container-fluid">
+                    <div className="menu-wrap">
+                        <ul className="menu">
+                            <li className="menu-item">
+                                <h6>Facilities</h6>
+                                <ul className="drop-menu">
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/facilities' >List</NavLink>
+                                    </li>
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/facilities/create'>Create</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="menu-item">
+                                <h6>Customers</h6>
+                                <ul className="drop-menu">
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/customers' >List</NavLink>
+                                    </li>
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/customers/create'>Create</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="menu-item">
+                                <h6>Contracts</h6>
+                                <ul className="drop-menu">
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/contracts' >List</NavLink>
+                                    </li>
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/contracts/create'>Create</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="menu-item">
+                                <h6>Employees</h6>
+                                <ul className="drop-menu">
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/employees' >List</NavLink>
+                                    </li>
+                                    <li className="drop-menu-item">
+                                        <NavLink to='/employees/create'>Create</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <Routes>

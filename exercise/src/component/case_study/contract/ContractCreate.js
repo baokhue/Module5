@@ -51,6 +51,7 @@ export function ContractCreate() {
                             <label className="form-label">Total: </label>
                             <Field name="total" type="number" className="form-control" />
                         </div>
+                        <button type="submit" class="btn btn-info">Submit</button>
                     </Form>
                 </Formik>
             </div>

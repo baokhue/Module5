@@ -51,7 +51,7 @@ export function FacilitiesCreate() {
                             <Field name="type" type="text" className="form-control" />
                         </div>
 
-                        <button type="submit">Add new!</button>
+                        <button type="submit" class="btn btn-info">Add new!</button>
                     </Form>
                 </Formik>
             </div>
