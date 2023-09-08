@@ -24,6 +24,8 @@ import {Header} from "./component/case_study/Header";
 import {Footer} from "./component/case_study/Footer";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {BookUpdate} from "./component/lesson6/BookUpdate";
+import {Users} from "./component/lesson7/Users";
+import {UsersList} from "./component/lesson7/UsersList";
 
 
 function App() {
@@ -31,16 +33,16 @@ function App() {
 
   return (
     <>
-    {/*<BrowserRouter>*/}
-    {/*<Routes>*/}
-    {/*    <Route path="/update/:id" element={<BookUpdate />}></Route>*/}
-    {/*    <Route path="" element={<LibraryApp />}></Route>*/}
-    {/*</Routes>*/}
-    {/*</BrowserRouter>*/}
+      <BrowserRouter>
+      <Routes>
+          <Route path="/list" element={<UsersList />}></Route>
+          <Route path="" element={<Users />}></Route>
+      </Routes>
+      </BrowserRouter>
 
-        <Header />
-        <Footer />
-        <ToastContainer />
+        {/*<Header />*/}
+        {/*<Footer />*/}
+        {/*<ToastContainer />*/}
     </>
   );
 }

@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "name": "Meow",
+      "email": "meow@gmail.com",
+      "website": "meow.org"
+    },
+    {
+      "id": 4,
+      "name": "Meow",
+      "email": "meow@gmail.com",
+      "website": "meow.org"
+    }
+  ]
+}
