@@ -7,7 +7,7 @@ import React from "react";
 
 export function Facilities() {
     const [facilities, setFacilities] = useState([]);
-
+    const [delFacility, setDelFacility] = useState({id: 0, name: ""});
     const [isOpen, setIsOpen] = React.useState(false);
 
     const showModal = () => {
@@ -27,8 +27,8 @@ export function Facilities() {
         setFacilities(list);
     };
 
-    const deleteFacility = async (id) => {
-        await facilityService.deleteFacility(id);
+    const deleteFacility = async () => {
+        await facilityService.deleteFacility(delFacility.id);
         hideModal();
         getFacilities();
     }
@@ -51,17 +51,10 @@ export function Facilities() {
                                                     <p className="card-text">{facility.people} people</p>
                                                     <p className="card-text">{facility.type}</p>
                                                     <span>
-                                                        <button onClick={showModal} className="btn btn-warning">Delete</button>
-                                                          <Modal show={isOpen} onHide={hideModal}>
-                                                            <Modal.Header>
-                                                              <Modal.Title>Delete Facility!</Modal.Title>
-                                                            </Modal.Header>
-                                                            <Modal.Body>Do you want to delete this facility?</Modal.Body>
-                                                            <Modal.Footer>
-                                                              <button onClick={(hideModal)} className="btn btn-danger">No</button>
-                                                              <button onClick={() => {deleteFacility(facility.id)}} className="btn btn-danger">Yes</button>
-                                                            </Modal.Footer>
-                                                          </Modal>
+                                                        <button onClick={() => {
+                                                            showModal();
+                                                            setDelFacility({id : facility.id, name: facility.name});
+                                                        }} className="btn btn-warning">Delete</button>
                                                     </span>
                                                     <span>
                                                         <button type="button" className="btn btn-success" >
@@ -78,7 +71,16 @@ export function Facilities() {
                     </div>
                 </div>
             </div>
-
+            <Modal show={isOpen} onHide={hideModal}>
+                <Modal.Header>
+                    <Modal.Title>Delete Facility!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Do you want to delete {delFacility.name}?</Modal.Body>
+                <Modal.Footer>
+                    <button onClick={(hideModal)} className="btn btn-danger">No</button>
+                    <button onClick={() => {deleteFacility()}} className="btn btn-danger">Yes</button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

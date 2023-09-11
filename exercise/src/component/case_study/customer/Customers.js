@@ -8,6 +8,7 @@ import React from "react";
 
 export function Customers(){
     const [customers, setCustomers] = useState([]);
+    const [delCustomer, setDelCustomer] = useState({id: 0, name: ""});
 
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -29,8 +30,8 @@ export function Customers(){
         setCustomers(list);
     };
 
-    const deleteCustomer = async (id) => {
-        await customerServices.deleteCustomer(id);
+    const deleteCustomer = async () => {
+        await customerServices.deleteCustomer(delCustomer.id);
         hideModal();
         getCustomers();
     }
@@ -65,17 +66,11 @@ export function Customers(){
                                         <td>{customer.address}</td>
                                         <td>
                                             <span>
-                                                <button onClick={showModal} className="btn btn-warning">Delete</button>
-                                                      <Modal show={isOpen} onHide={hideModal}>
-                                                        <Modal.Header>
-                                                          <Modal.Title>Delete Customer!</Modal.Title>
-                                                        </Modal.Header>
-                                                        <Modal.Body>Do you want to delete this customer?</Modal.Body>
-                                                        <Modal.Footer>
-                                                          <button onClick={(hideModal)} className="btn btn-danger">No</button>
-                                                          <button onClick={() => {deleteCustomer(customer.id)}} className="btn btn-danger">Yes</button>
-                                                        </Modal.Footer>
-                                                      </Modal>
+                                                <button onClick={() => {
+                                                    showModal();
+                                                    setDelCustomer({id: customer.id, name: customer.name});
+                                                }} className="btn btn-warning">Delete</button>
+
                                             </span>
                                             <span>
                                                 <button type="button" className="btn btn-success">
@@ -85,6 +80,16 @@ export function Customers(){
                                             </span>
                                         </td>
                                     </tr>
+                                    <Modal show={isOpen} onHide={hideModal}>
+                                        <Modal.Header>
+                                            <Modal.Title>Delete Customer!</Modal.Title>
+                                        </Modal.Header>
+                                        <Modal.Body>Do you want to delete {delCustomer.name}?</Modal.Body>
+                                        <Modal.Footer>
+                                            <button onClick={(hideModal)} className="btn btn-danger">No</button>
+                                            <button onClick={() => {deleteCustomer(customer.id)}} className="btn btn-danger">Yes</button>
+                                        </Modal.Footer>
+                                    </Modal>
                                 </>
                             )
                         })
