@@ -33,16 +33,9 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-      <Routes>
-          <Route path="/list" element={<UsersList />}></Route>
-          <Route path="" element={<Users />}></Route>
-      </Routes>
-      </BrowserRouter>
-
-        {/*<Header />*/}
-        {/*<Footer />*/}
-        {/*<ToastContainer />*/}
+        <Header />
+        <Footer />
+        <ToastContainer />
     </>
   );
 }

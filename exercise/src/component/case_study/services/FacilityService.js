@@ -25,11 +25,20 @@ export const getFacility = async (id) => {
     } catch (e) {
         console.log(e);
     }
-}
+};
 
 export const editFacility = async (id, value) => {
     try {
         const result = await axios.patch(`http://localhost:8081/facilities/${id}`, value);
+        return result.data;
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+export const deleteFacility = async (id) => {
+    try {
+        const result = await axios.delete(`http://localhost:8081/facilities/${id}`);
         return result.data;
     } catch (e) {
         console.log(e);

@@ -23,6 +23,22 @@
       "cost": 750000,
       "people": 4,
       "type": "Daily"
+    },
+    {
+      "id": 4,
+      "name": "Ocean Deluxe",
+      "square": 85.8,
+      "cost": 750000,
+      "people": 6,
+      "type": "Daily"
+    },
+    {
+      "id": 5,
+      "name": "Ocean Deluxe",
+      "square": 85.8,
+      "cost": 750000,
+      "people": 5,
+      "type": "Daily"
     }
   ],
   "customers": [
@@ -50,6 +66,17 @@
     },
     {
       "id": 3,
+      "name": "Meow",
+      "birthday": "17/11/2002",
+      "gender": "0",
+      "idCard": "515442112",
+      "phone": "026312",
+      "email": "meow@gmail.com",
+      "level": "3",
+      "address": "Hue"
+    },
+    {
+      "id": 4,
       "name": "Meow",
       "birthday": "17/11/2002",
       "gender": "0",

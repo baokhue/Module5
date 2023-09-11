@@ -1,7 +1,8 @@
 import {useNavigate} from "react-router-dom";
 import * as contractServices from "../services/ContractServices";
 import {toast} from "react-toastify";
-import {Field, Form, Formik} from "formik";
+import {ErrorMessage, Field, Form, Formik} from "formik";
+import * as Yup from "yup";
 
 export function ContractCreate() {
     const navigate = useNavigate();
@@ -25,6 +26,13 @@ export function ContractCreate() {
                             total: 0
                         }
                     }
+
+                    validationSchema={
+                        Yup.object({
+                            deposit: Yup.number().positive("This field must be a positive integer!"),
+                        })
+                    }
+
                     onSubmit={(values, {setSubmitting}) => {
                         addContract(values);
                         setSubmitting(false);
@@ -46,6 +54,7 @@ export function ContractCreate() {
                         <div className="mb-3">
                             <label className="form-label">Deposit: </label>
                             <Field name="deposit" type="number" className="form-control" />
+                            <ErrorMessage name="deposit" className="form-err" component='span'></ErrorMessage>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Total: </label>

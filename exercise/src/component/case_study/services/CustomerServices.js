@@ -34,4 +34,13 @@ export const editCustomer = async (id, value) => {
     } catch (e) {
         console.log(e);
     }
-}
+};
+
+export const deleteCustomer = async (id) => {
+    try {
+        const result = await axios.delete(`http://localhost:8081/customers/${id}`);
+        return result.data;
+    } catch (e) {
+        console.log(e);
+    }
+};

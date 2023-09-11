@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import * as customerServices from "../services/CustomerServices";
 import {toast} from "react-toastify";
-import {Field, Form, Formik} from "formik";
+import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup";
 
 export function CustomerCreate() {
@@ -32,7 +32,10 @@ export function CustomerCreate() {
 
                     validationSchema={
                         Yup.object({
-                            name: Yup.string().matches(/^D[A-Za-z]+$/, "This field is invalid!"),
+                            name: Yup.string().matches(/^[A-Za-z]+[\\D]$/, "This field is invalid!"),
+                            phone: Yup.string().matches(/^(090|091|\(84\)\+90|\(84\)\+91)[\\d]{7}$/, "This field is invalid!"),
+                            idCard: Yup.string().matches(/^[\\d]{9,12}$/, "This field is invalid!"),
+                            email: Yup.string().email("This field is invalid!"),
                         })
                     }
 
@@ -46,6 +49,7 @@ export function CustomerCreate() {
                         <div className="mb-3">
                             <label className="form-label">Full name</label>
                             <Field name="name" type="text" className="form-control" />
+                            <ErrorMessage name="name" className="form-err" component='span'></ErrorMessage>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Date of birth</label>
@@ -68,14 +72,17 @@ export function CustomerCreate() {
                         <div className="mb-3">
                             <label className="form-label">ID Card: </label>
                             <Field name="idCard" type="text" className="form-control" />
+                            <ErrorMessage name="idCard" className="form-err" component='span'></ErrorMessage>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Phone number: </label>
                             <Field name="phone" type="text" className="form-control" />
+                            <ErrorMessage name="phone" className="form-err" component='span'></ErrorMessage>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Email: </label>
                             <Field name="email" type="text" className="form-control" />
+                            <ErrorMessage name="email" className="form-err" component='span'></ErrorMessage>
                         </div>
                         <div className="mb-3">
                             <div className="form-check">
