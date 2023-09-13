@@ -45,7 +45,7 @@ export function CustomerCreate() {
                         }
                     }
                 >
-                    <Form>
+                    <Form style={{marginBottom: 50}}>
                         <div className="mb-3">
                             <label className="form-label">Full name</label>
                             <Field name="name" type="text" className="form-control" />
@@ -121,7 +121,7 @@ export function CustomerCreate() {
                             <Field name="address" type="text" className="form-control" />
                         </div>
 
-                        <button type="submit" class="btn btn-info">Add new</button>
+                        <button type="submit" className="btn btn-info">Add new</button>
                     </Form>
                 </Formik>
 

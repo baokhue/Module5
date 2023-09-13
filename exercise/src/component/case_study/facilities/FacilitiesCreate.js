@@ -29,7 +29,7 @@ export function FacilitiesCreate() {
                     validationSchema={
                         Yup.object({
                             name: Yup.string().required("This field is not allow to be empty!")
-                                .matches(/^\\D$/, "This field is invalid!"),
+                                .matches(/^[^0-9][A-Za-z]+$/, "This field is invalid!"),
                             square: Yup.number().required("This field is not allow to be empty!")
                                 .positive("This field must be a positive integer!"),
                             cost: Yup.number().required("This field is not allow to be empty!"),
